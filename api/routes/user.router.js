@@ -9,4 +9,5 @@ Router.get("/users", userControllers.get);
 Router.get("/info",authMidlewares.userAuthentication,userControllers.getById);
 
 Router.post("/login",userControllers.Login);
+Router.post("/register",userControllers.Register);
 module.exports = Router;
