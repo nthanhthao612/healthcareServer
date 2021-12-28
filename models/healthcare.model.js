@@ -1,38 +1,59 @@
 var mongoose = require('mongoose');
 
 var listRecordedSchema = new mongoose.Schema({
-    footStep: {
+    footSteps: {
+        name: String,
+        keyword: String,
+        activityId: String,
         numeral: Number,
         rate: String,
         time: String,
+        unit: String,
+        distance: Number,
     },
-    sleepingTime: {
+    sleepingTimes: {
+        name: String,
+        keyword: String,
+        activityId: String,
         numeral: Number,
         rate: String,
         time: String,
         start:String,
-        end:String
+        end:String,
+        unit: String
     },
-    BMInumeral: {
+    BMI: {
+        name: String,
+        keyword: String,
+        activityId: String,
         numeral: Number,
         rate: String,
         time: String,
+        height: Number,
+        weight: Number,
+        unit: String
     },
     bloodPressure: {
+        name: String,
+        keyword: String,
+        activityId: String,
         systolic: Number,
         diastolic: Number,
         rate: String,
         time: String,
         unit: String,
-        numeral: String
+        numeral: String,
     },
     heartBeat: {
+        name: String,
+        keyword: String,
+        activityId: String,
         numeral: Number,
         rate: String,
         time: String,
-        unit: String,
+        unit: String
     },
-    date:String
+    Date:String
 });
 
 var healthCareSchema = new mongoose.Schema({

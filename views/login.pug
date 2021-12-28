@@ -1,0 +1,33 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet' href='/css/login.css' type='text/css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+  body
+    .container
+      form(action='/user/login',method="POST")
+        .links
+          h3.title  Đăng nhập với (Đang phát triển)
+          .buttons
+            a.btn(href='#')
+              i.fab.fa-google
+              | google
+            a.btn(href='#')
+              i.fab.fa-facebook
+              | facebook
+        .input-box
+          h3.title  Email hoặc tên đăng nhập
+          .input
+            span.far.fa-envelope
+            input(type='text' name='username' placeholder='Email hoặc Tên tài khoản')
+          .input
+            span.fas.fa-lock
+            input(type='password' name='password' placeholder='Mật khẩu')
+          .checkboxs
+            input#remember(type='checkbox' name='')
+            label(for='remember')  Lưu lại
+          input.sign-in-btn(type='submit' value='Đăng nhập')

@@ -9,16 +9,10 @@ var userSchema = new mongoose.Schema({
     phonenumber:String,
     dob: String,
     gender: String,
-    healthCare: {
-        ref: String,
-        id: String,
-        db: String
-    },
-    messagese: {
-        ref: String,
-        id: String,
-        db: String
-    }
+    email: String,
+    healthCare: Object,
+    messagese: Object,
+    permit: String,
 });
 var User = mongoose.model('User', userSchema, 'users');
 

@@ -14,9 +14,16 @@ mongoose.connect("mongodb+srv://admin:qwer123@cluster0.nyrj3.mongodb.net/healthc
 // mongoose.connect("mongodb+srv://admin:qwer123@cluster0.nyrj3.mongodb.net/healthcareMGServer?retryWrites=true&w=majority");
 const app = express();
 const server = http.createServer(app);
+const userRoute = require("./route/user.route");
+const mainRoute = require("./route/main.route");
+const authMiddleWares = require("./middlewares/user.authentication");
 
+app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.set("view engine","pug");
+app.set("views","./views");
+app.use(cookieParser("thanhthao"));
 app.use(cookieParser());
 server.listen(7000,()=>{
     console.log("start server successful !!!");
@@ -25,3 +32,9 @@ server.listen(7000,()=>{
 app.use("/api/user",userApi);
 app.use("/api/message",messageApi);
 app.use("/api/healthcare",healthCareApi);
+
+app.get("/",function(req,res){
+    res.render('homepage');
+});
+app.use("/user",userRoute);
+app.use("/main",authMiddleWares.authenticateWebLogin,mainRoute);

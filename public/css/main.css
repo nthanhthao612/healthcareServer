@@ -1,0 +1,62 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+#header{
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    justify-content: center;
+    flex-grow: 1;
+}
+#logo-area{
+    flex-grow: 1;
+}
+.logo{
+    margin:0;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 50px;
+    color: rgb(22, 160, 133);
+}
+#main-area{
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-direction: row;
+    height: 100%;
+    flex-grow: 10;
+}
+#sidebar{
+    width: 12%;
+    position: fixed;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    background: #fff;
+}
+#sidebar ul li a{
+    color: black;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+#sidebar ul li{
+    list-style: none;
+}
+#main-content{
+    left: 170px;
+    position: absolute;
+    width: 88%;
+    height: 100%;
+}
+
+
+

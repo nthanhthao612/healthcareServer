@@ -1,0 +1,54 @@
+{
+    "footSteps": {
+        "activityId": "1",
+        "keyword": "Footsteps",
+        "name": "Bước chân",
+        "numeral": 0,
+        "rate": "Bình thường",
+        "time": "0",
+        "unit": "Bước",
+        "distance":0
+    },
+    "sleepingTimes": {
+        "activityId": "2",
+        "keyword": "SleepingTime",
+        "name": "Giấc ngủ",
+        "numeral": 0,
+        "rate": "Bình thường",
+        "time": "0",
+        "start": "0",
+        "end": "0",
+        "unit":""
+    },
+    "BMI": {
+        "activityId": "3",
+        "keyword": "BMI",
+        "name": "BMI",
+        "height": 0,
+        "weight": 0,
+        "numeral": 0,
+        "rate": "Bình thường",
+        "time": "0",
+        "unit":""
+    },
+    "bloodPressure": {
+        "activityId": "4",
+        "keyword": "BloodPressure",
+        "name": "Huyết áp",
+        "systolic": 0,
+        "diastolic": 0,
+        "rate": "Bình thường",
+        "time": "0",
+        "unit": "mmHg",
+        "numeral": "0/0"
+    },
+    "heartBeat": {
+        "activityId": "5",
+        "keyword": "HeartBeat",
+        "name": "Tim mạch",
+        "numeral": 0,
+        "rate": "Bình thường",
+        "time": "0",
+        "unit": "bpm"
+    }
+}
