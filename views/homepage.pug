@@ -1,231 +1,241 @@
 doctype html
-head
-  meta(charset='UTF-8')
-  meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-  link(rel='stylesheet' href='/css/homepage.css' type='text/css')
-  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
-// header
-header.header
-  a.logo(href='/')
-    i.fas.fa-heartbeat
-    |  MediaCare
-  .navbar
-    a(href='/') Trang ch&#x1EE7;
-    a(href='#services') D&#x1ECB;ch V&#x1EE5;
-    a(href='#about') About
-    a(href='#doctors') B&aacute;c s&itilde;
-    a(href='#book') &Dstrok;&#x1EB7;t l&#x1ECB;ch
-    a(href='#review') Ph&#x1EA3;n h&#x1ED3;i
-    a(href='/user/login') &Dstrok;&abreve;ng nh&#x1EAD;p
-  #menu-btn.fas.fa-bars
-// header end
-// Home
-section#home.home
-  .image
-    img(src='img/home-img.svg' alt='')
-  .content
-    h3  S&#x1ED1;ng kh&#x1ECF;e s&#x1ED1;ng &dstrok;&#x1EB9;p
-    p
-      | H&atilde;y s&#x1ED1;ng th&#x1EAD;t l&agrave;nh m&#x1EA1;nh, kh&ocirc;ng ch&#x1EC9; ri&ecirc;ng ta m&agrave; c&ograve;n cho nh&#x1EEF;ng &dstrok;&#x1EE9;a con v&agrave; nh&#x1EEF;ng ng&#x1B0;&#x1EDD;i xung quanh ta
-    a.btn(href='#')
-      | Li&ecirc;n h&#x1EC7; v&#x1EDB;i ch&uacute;ng t&ocirc;i
-      span.fas.fa-chevron-right
-// Home end
-// icon
-section.icon-container
-  .icons
-    i.fas.fa-user-md
-    h3 100+
-    p B&aacute;c s&itilde; l&agrave;m vi&#x1EC7;c
-  .icons
-    i.fas.fa-users
-    h3 1000+
-    p B&#x1EC7;nh nh&acirc;n
-  .icons
-    i.fas.fa-procedures
-    h3 600+
-    p Gi&#x1B0;&#x1EDD;ng n&#x1EB1;m
-  .icons
-    i.fas.fa-hospital
-    h3 10+
-    p B&#x1EC7;nh vi&#x1EC7;n &dstrok;ang c&oacute;
-// icon end
-// Service
-section#services.services
-  h1.heading
-    | d&#x1ECB;ch 
-    span  v&#x1EE5; 
-  .box-container
-    .box
-      i.fas.fa-notes-medical
-      h3 Ki&#x1EC3;m tra mi&#x1EC5;n ph&iacute;
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-    .box
-      i.fas.fa-ambulance
-      h3 C&#x1EA5;p c&#x1EE9;u 24/7
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-    .box
-      i.fas.fa-user-md
-      h3 B&aacute;c s&itilde; chuy&ecirc;n m&ocirc;n
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-    .box
-      i.fas.fa-pills
-      h3 T&#x1EE7; Thu&#x1ED1;c
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-    .box
-      i.fas.fa-procedures
-      h3 Gi&#x1B0;&#x1EDD;ng b&#x1EC7;nh
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-    .box
-      i.fas.fa-heartbeat
-      h3 Ch&abreve;m s&oacute;c &dstrok;&#x1EB7;c bi&#x1EC7;t
-      p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
-      a.btn(href='#')
-        | Chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-// Service end
-// about
-section#about.about
-  h1.heading
-    span about
-    |  us
-  .row
-    .image
-      img(src='img/about-img.svg' alt='')
-    .content
-      h3 H&atilde;y &dstrok;&#x1EC3; ch&uacute;ng t&ocirc;i ch&abreve;m s&oacute;c b&#x1EA1;n
-      a.btn(href='#')
-        | chi ti&#x1EBF;t 
-        span.fas.fa-chevron-right
-// about end
-// doctor
-section#doctors.doctors
-  h1.heading
-    | B&aacute;c 
-    span S&itilde;
-  .box-container
-    .box
-      img(src='img/dr_1.jpg' alt='')
-      h3 mr
-      span B&aacute;c s&itilde; chuy&ecirc;n khoa
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-    .box
-      img(src='img/dr2.jpg' alt='')
-      h3 mr
-      span B&aacute;c s&itilde; chuy&ecirc;n khoa
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-    .box
-      img(src='img/dr3.jpg' alt='')
-      h3 mr
-      span B&aacute;c s&itilde; chuy&ecirc;n khoa
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-    .box
-      img(src='img/dr4.jpg' alt='')
-      h3 mss
-      span  B&aacute;c s&itilde; chuy&ecirc;n khoa 
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-    .box
-      img(src='img/dr5.jpg' alt='')
-      h3 mss
-      span B&aacute;c s&itilde; chuy&ecirc;n khoa
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-    .box
-      img(src='img/dr6.jpg' alt='')
-      h3 mss
-      span B&aacute;c s&itilde; chuy&ecirc;n khoa
-      .share
-        a.fab.fa-facebook-f(href='#')
-        a.fab.fa-twitter(href='#')
-        a.fab.fa-instagram(href='#')
-// doctor end
-// book lịch
-section#book.book
-  h1.heading
-    span  &Dstrok;&#x1EB7;t L&#x1ECB;ch 
-    |  ngay
-  .row
-    .image
-      img(src='img/book-img.svg' alt='')
-    form(action='')
-      h3 &dstrok;&#x1EB7;t l&#x1ECB;ch h&#x1EB9;n
-      input.box(type='text' placeholder='Họ và tên của bạn')
-      input.box(type='number' placeholder='Số điện thoại liên hệ')
-      input.box(type='email' placeholder='Email của bạn')
-      input.box(type='date')
-      input.btn(type='submit' value='đặt ngay')
-// book lịch end
-// review
-section#review.review
-  h1.heading
-    | kh&aacute;ch h&agrave;ng 
-    span  ph&#x1EA3;n h&#x1ED3;i
-  .box-container
-    .box
-      img(src='img/rv1.jpg' alt='')
-      h3 mr abc
-      .stars
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star-half-alt
-      p.text  oh! so good
-    .box
-      img(src='img/rv1.jpg' alt='')
-      h3 mss abc
-      .stars
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star-half-alt
-      p.text  oh! so good
-    .box
-      img(src='img/rv1.jpg' alt='')
-      h3 nr abc
-      .stars
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star
-        i.fas.fa-star-half-alt
-      p.text  oh! so good
-// review end
-// footer section starts
-section.footer
-  .box-container
+html 
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    
+    link(rel='stylesheet' href='/css/homepage.css' type='text/css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+    script(src="js/jquery-3.6.0.min.js")
+    link(rel='shortcut icon',href='img/mainlogo.png')
+    title Homepage
+  // header
+  body
+    script(src='js/control.js' type="text/javascript")
+    header.header
+      .logo-area
+          div
+            a.logo(href="/")
+              img.logoPic(src="img/mainlogo.png", alt="", srcset="") 
+          div 
+            a.logo(href="/")
+              h6 Media Care 
+      .navbar
+        a(href='/') Trang ch&#x1EE7;
+        a(href='#services') D&#x1ECB;ch V&#x1EE5;
+        a(href='#about') About
+        a(href='#doctors') B&aacute;c s&itilde;
+        a(href='#book') &Dstrok;&#x1EB7;t l&#x1ECB;ch
+        a(href='#review') Ph&#x1EA3;n h&#x1ED3;i
+        span#login-logout-btn
+      #menu-btn.fas.fa-bars
+    // header end
+    // Home
+    section#home.home
+      .image
+        img(src='img/home-img.svg' alt='')
+      .content
+        h3  S&#x1ED1;ng kh&#x1ECF;e s&#x1ED1;ng &dstrok;&#x1EB9;p
+        p
+          | H&atilde;y s&#x1ED1;ng th&#x1EAD;t l&agrave;nh m&#x1EA1;nh, kh&ocirc;ng ch&#x1EC9; ri&ecirc;ng ta m&agrave; c&ograve;n cho nh&#x1EEF;ng &dstrok;&#x1EE9;a con v&agrave; nh&#x1EEF;ng ng&#x1B0;&#x1EDD;i xung quanh ta
+        a.btn(href='#')
+          | Li&ecirc;n h&#x1EC7; v&#x1EDB;i ch&uacute;ng t&ocirc;i
+          span.fas.fa-chevron-right
+    // Home end
+    // icon
+    section.icon-container
+      .icons
+        i.fas.fa-user-md
+        h3 100+
+        p B&aacute;c s&itilde; l&agrave;m vi&#x1EC7;c
+      .icons
+        i.fas.fa-users
+        h3 1000+
+        p B&#x1EC7;nh nh&acirc;n
+      .icons
+        i.fas.fa-procedures
+        h3 600+
+        p Gi&#x1B0;&#x1EDD;ng n&#x1EB1;m
+      .icons
+        i.fas.fa-hospital
+        h3 10+
+        p B&#x1EC7;nh vi&#x1EC7;n &dstrok;ang c&oacute;
+    // icon end
+    // Service
+    section#services.services
+      h1.heading
+        | d&#x1ECB;ch 
+        span  v&#x1EE5; 
+      .box-container
+        .box
+          i.fas.fa-notes-medical
+          h3 Ki&#x1EC3;m tra mi&#x1EC5;n ph&iacute;
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+        .box
+          i.fas.fa-ambulance
+          h3 C&#x1EA5;p c&#x1EE9;u 24/7
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+        .box
+          i.fas.fa-user-md
+          h3 B&aacute;c s&itilde; chuy&ecirc;n m&ocirc;n
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+        .box
+          i.fas.fa-pills
+          h3 T&#x1EE7; Thu&#x1ED1;c
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+        .box
+          i.fas.fa-procedures
+          h3 Gi&#x1B0;&#x1EDD;ng b&#x1EC7;nh
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+        .box
+          i.fas.fa-heartbeat
+          h3 Ch&abreve;m s&oacute;c &dstrok;&#x1EB7;c bi&#x1EC7;t
+          p  H&atilde;y &dstrok;&#x1EBF;n v&#x1EDB;i mediacare
+          a.btn(href='#')
+            | Chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+    // Service end
+    // about
+    section#about.about
+      h1.heading
+        span about
+        |  us
+      .row
+        .image
+          img(src='img/about-img.svg' alt='')
+        .content
+          h3 H&atilde;y &dstrok;&#x1EC3; ch&uacute;ng t&ocirc;i ch&abreve;m s&oacute;c b&#x1EA1;n
+          a.btn(href='#')
+            | chi ti&#x1EBF;t 
+            span.fas.fa-chevron-right
+    // about end
+    // doctor
+    section#doctors.doctors
+      h1.heading
+        | B&aacute;c 
+        span S&itilde;
+      .box-container
+        .box
+          img(src='img/dr_1.jpg' alt='')
+          h3 mr
+          span B&aacute;c s&itilde; chuy&ecirc;n khoa
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+        .box
+          img(src='img/dr2.jpg' alt='')
+          h3 mr
+          span B&aacute;c s&itilde; chuy&ecirc;n khoa
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+        .box
+          img(src='img/dr3.jpg' alt='')
+          h3 mr
+          span B&aacute;c s&itilde; chuy&ecirc;n khoa
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+        .box
+          img(src='img/dr4.jpg' alt='')
+          h3 mss
+          span  B&aacute;c s&itilde; chuy&ecirc;n khoa 
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+        .box
+          img(src='img/dr5.jpg' alt='')
+          h3 mss
+          span B&aacute;c s&itilde; chuy&ecirc;n khoa
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+        .box
+          img(src='img/dr6.jpg' alt='')
+          h3 mss
+          span B&aacute;c s&itilde; chuy&ecirc;n khoa
+          .share
+            a.fab.fa-facebook-f(href='#')
+            a.fab.fa-twitter(href='#')
+            a.fab.fa-instagram(href='#')
+    // doctor end
+    // book lịch
+    section#book.book
+      h1.heading
+        span  &Dstrok;&#x1EB7;t L&#x1ECB;ch 
+        |  ngay
+      .row
+        .image
+          img(src='img/book-img.svg' alt='')
+        form(action='')
+          h3 &dstrok;&#x1EB7;t l&#x1ECB;ch h&#x1EB9;n
+          input.box(type='text' placeholder='Họ và tên của bạn')
+          input.box(type='number' placeholder='Số điện thoại liên hệ')
+          input.box(type='email' placeholder='Email của bạn')
+          input.box(type='date')
+          input.btn(type='submit' value='đặt ngay')
+    // book lịch end
+    // review
+    section#review.review
+      h1.heading
+        | kh&aacute;ch h&agrave;ng 
+        span  ph&#x1EA3;n h&#x1ED3;i
+      .box-container
+        .box
+          img(src='img/rv1.jpg' alt='')
+          h3 mr abc
+          .stars
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star-half-alt
+          p.text  oh! so good
+        .box
+          img(src='img/rv1.jpg' alt='')
+          h3 mss abc
+          .stars
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star-half-alt
+          p.text  oh! so good
+        .box
+          img(src='img/rv1.jpg' alt='')
+          h3 nr abc
+          .stars
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star
+            i.fas.fa-star-half-alt
+          p.text  oh! so good
+    // review end
+    // footer section starts
+    section.footer
+    .box-container
     .box
       h3 &dstrok;&#x1B0;&#x1EDD;ng d&#x1EAB;n nhanh
       a(href='#')

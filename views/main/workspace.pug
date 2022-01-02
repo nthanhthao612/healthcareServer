@@ -1,0 +1,68 @@
+extends ../../public/layout/mainlayout.pug
+block content
+    #main-content
+        #search-area
+            form#search-form(action="/main/workspace/get",method="get") 
+                input#inputSearch(type='text', placeholder='Tìm kiếm',name="searchValue",,required="true")
+                select.form-select(aria-label='Default select example',name="method",id="select",required="true")
+                    option(value='') Chọn phương thức
+                    option(value='id') ID
+                    option(value='phone') Điện thoại
+                button#search-btn.btn.btn-primary(type='Submit') Tìm kiếm 
+        #content-display
+            if(Data && curUser)
+                - let healthcareID = JSON.parse(JSON.stringify(curUser))._id
+                - let pathname = "/main/workspace/statistics"
+                - let avatar = curUser.gender==="Nam"?"https://i.imgur.com/f94KMy4.png":"https://i.imgur.com/PNV9Tr8.png"
+                .line
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src=avatar)
+                        .content-area
+                            p.text-h2= `${curUser.lastName} ${curUser.firstName}`
+                            p.text-h3= `${curUser.phonenumber}`
+                            p.text-h3= `${curUser.dob}`
+                        .statistics-btn-area
+                            a.btn(href=`/main/workspace/statistics?id=${healthcareID}`) Xem thống kê
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src="/img/sleeping.png")
+                        .content-area
+                            p.text-h2= `${Data.sleepingTimes.name}`
+                            p.number-h1= `${Data.sleepingTimes.numeral} ${Data.sleepingTimes.unit}`
+                        .statistics-btn-area
+                        //-     a.btn(href=`${pathname}?id=${healthcareID}&item=${Data.sleepingTimes.keyword}`) Xem thống kê   
+                .line
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src="/img/footstep.png")
+                        .content-area
+                            p.text-h2= `${Data.footSteps.name}`
+                            p.number-h1= `${Data.footSteps.numeral} ${Data.footSteps.unit}`
+                        .statistics-btn-area
+                        //-     a.btn(href=`${pathname}?id=${healthcareID}&item=${Data.footSteps.keyword}`) Xem thống kê 
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src="/img/blood-pressure.png")
+                        .content-area
+                            p.text-h2= `${Data.bloodPressure.name}`
+                            p.number-h1= `${Data.bloodPressure.numeral} ${Data.bloodPressure.unit}`
+                        .statistics-btn-area
+                        //-     a.btn(href=`${pathname}?id=${healthcareID}&item=${Data.bloodPressure.keyword}`) Xem thống kê
+                .line
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src="/img/heartbeat.png")
+                        .content-area
+                            p.text-h2= `${Data.heartBeat.name}`
+                            p.number-h1= `${Data.heartBeat.numeral} ${Data.heartBeat.unit}`
+                        .statistics-btn-area
+                        //-     a.btn(href=`${pathname}?id=${healthcareID}&item=${Data.heartBeat.keyword}`) Xem thống kê
+                    .item 
+                        .avatar-area
+                            img.avatar-picture(src="/img/bmi.png")
+                        .content-area
+                            p.text-h2= `${Data.BMI.name}`
+                            p.number-h1= `${Data.BMI.numeral} ${Data.BMI.unit}`
+                        .statistics-btn-area
+                        //-     a.btn(href=`${pathname}?id=${healthcareID}&item=${Data.BMI.keyword}`) Xem thống kê

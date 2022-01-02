@@ -1,7 +1,7 @@
 {
     "footSteps": {
         "activityId": "1",
-        "keyword": "Footsteps",
+        "keyword": "footsteps",
         "name": "Bước chân",
         "numeral": 0,
         "rate": "Bình thường",
@@ -11,7 +11,7 @@
     },
     "sleepingTimes": {
         "activityId": "2",
-        "keyword": "SleepingTime",
+        "keyword": "sleepingTime",
         "name": "Giấc ngủ",
         "numeral": 0,
         "rate": "Bình thường",
@@ -33,7 +33,7 @@
     },
     "bloodPressure": {
         "activityId": "4",
-        "keyword": "BloodPressure",
+        "keyword": "bloodPressure",
         "name": "Huyết áp",
         "systolic": 0,
         "diastolic": 0,
@@ -44,7 +44,7 @@
     },
     "heartBeat": {
         "activityId": "5",
-        "keyword": "HeartBeat",
+        "keyword": "heartBeat",
         "name": "Tim mạch",
         "numeral": 0,
         "rate": "Bình thường",

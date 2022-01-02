@@ -6,6 +6,7 @@ const FemaleAvatar = "https://i.imgur.com/PNV9Tr8.png";
 const MaleAvatar = "https://i.imgur.com/f94KMy4.png";
 let defaultRecord = require("../../healthcareDEF.json");
 let ObjectID = require('mongodb').ObjectID;
+let Calendar = require("../../models/calendar.model");
 
 module.exports.get = async function (req, res) {
     let data = await User.find({});
@@ -33,14 +34,11 @@ module.exports.Login = async function (req, res) {
     var user = await User.findOne({ username: username, password: password });
     if (!user || username == '') {
         error.push('Username or Password is wrong!');
-        console.log("sai");
     }
     if (error.length != 0) {
-        console.log("co loi");
         res.json({ error: error });
     }
     else {
-        console.log("dang nhap thanh cong");
         var token = jwt.sign({ userId: user._id }, process.env.SECRET_CODE);
         res.json(token);
     }
@@ -58,14 +56,15 @@ module.exports.Register = async function (req, res) {
     }
     if (error.length != 0) {
         res.json({ error: error });
-        console.log("co loi");
     }
     else {
         let message = await Message.create({ chatBoxList: [] });
         let healthcare = await HealthCare.create({ listRecorded: [] });
+        let calendar = await Calendar.create({ listDate: [] });
         data.gender == "Nam" ? data.avatar = MaleAvatar : data.avatar = FemaleAvatar;
         data.healthCare = { $ref: "healthcareStatistics", $id: healthcare._id, $db: "heathcareMGServer" };
         data.messagese = { $ref: "message", $id: message._id, $db: "heathcareMGServer" }
+        data.calendar = { $ref: "calendar", $id: calendar._id, $db: "heathcareMGServer" }
         let date = new Date();
         let currentTime = `${date.getHours()}h${date.getMinutes()}`;
         let currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -76,7 +75,7 @@ module.exports.Register = async function (req, res) {
         defaultRecord.heartBeat.time = currentTime;
         defaultRecord._id = new ObjectID();
         data.permit = "nor";
-        await HealthCare.updateOne({ _id: healthcare._id }, { listRecorded: [defaultRecord] })
+        await HealthCare.updateOne({ _id: healthcare._id }, { listRecorded: [defaultRecord] });
         let temp = await User.create(data);
         res.json({ notification: "successful!" });
     }

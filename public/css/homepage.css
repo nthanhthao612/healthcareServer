@@ -49,6 +49,12 @@ section:nth-child(even){
     justify-content: space-between;
     background: #fff;
 }
+.header .logo-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .header .logo{
     font-size: 30px;
@@ -58,7 +64,13 @@ section:nth-child(even){
 .header .logo i{
     color: var(--green);
 }
-
+.header .logoPic{
+    width: 50px;
+    height: 50px;
+}
+.logo-area div a h6{
+    font-family: monospace;
+}
 .header .navbar a{
     font-size: 19px;
     color: var(--light-color);

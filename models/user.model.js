@@ -12,7 +12,9 @@ var userSchema = new mongoose.Schema({
     email: String,
     healthCare: Object,
     messagese: Object,
+    calendar: Object,
     permit: String,
+    address: String
 });
 var User = mongoose.model('User', userSchema, 'users');
 

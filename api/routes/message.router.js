@@ -6,7 +6,7 @@ const authMidlewares = require("../../middlewares/user.authentication");
 
 Router.get("/get", authMidlewares.userAuthentication , messageControllers.get);
 
-Router.get("/test", messageControllers.test);
+// Router.get("/test", messageControllers.test);
 
 
 module.exports = Router;

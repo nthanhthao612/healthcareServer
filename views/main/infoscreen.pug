@@ -1,0 +1,43 @@
+extends ../../public/layout/mainlayout.pug
+block content
+    #main-content
+        .avatar-area
+            img(src=`${User.avatar}`, alt="",width="200px",height="200px")
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js')
+        form(action="/user/info", method="post")
+            .name-area 
+                .com1
+                    label.form-label(for='lastname') Họ
+                    input#lastname.form-control(type='text',name="lastName",value=`${User.lastName}`)
+                .com1
+                    label.form-label(for='firstname') Tên
+                    input#firstname.form-control(type='text',name="firstName",value=`${User.firstName}`)
+            .password-area 
+                .com1
+                    label.form-label(for='password') Mật khẩu
+                    input#password.form-control(type='password',name="password",value=`${User.password}`,required="true")
+            .email-area
+                .com1
+                    label.form-label(for='email') Email
+                    input#email.form-control(type='email',name="email",value=`${User.email}`,required="true")
+                .com1
+                    label.form-label(for='phonenumber') Số điện thoại
+                    input#phonenumber.form-control(type='text',name="phonenumber",value=`${User.phonenumber}`,required="true")
+            .dob-area 
+                .com1
+                    label.form-label(for='dob') Ngày sinh
+                    input#dob.form-control(type='date',name="dob",value=`${User.dob}`)
+                .com1
+                    select.form-select(name="gender",value=`${User.gender}`)
+                        option(selected='') Giới tính
+                        option(value='Nam') Nam
+                        option(value='Nữ') Nữ
+            .address-area 
+                .com1
+                    label.form-label(for='address') Địa chỉ
+                    input#address.form-control(type='text',name="address",value=`${User.address}`)
+            .btn-area
+                .com1
+                    a.btn.btn-primary.btn-lg.active(href='/main/workspace', role='button') Quay lại
+                .com1
+                    button.btn.btn-primary.btn-lg.active(type='submit') Hoàn tất

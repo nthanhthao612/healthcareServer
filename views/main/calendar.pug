@@ -1,0 +1,18 @@
+extends ../../public/layout/mainlayout.pug
+block content
+    #main-content
+        #function-area
+            
+        #content-display
+            -let {listDate} = Data 
+            each date in listDate
+                .card
+                    img.card-img-top(src='https://i.imgur.com/f94KMy4.png', alt='Card image cap',width="180px",height="180px")
+                    .card-body
+                        h5.card-title= date.userName
+                        p= `Ngày khám: ${date.date}`
+                        p= `Giờ khám: ${date.time}`
+                        if date.checked 
+                            a.btn.btn-primary(href='#') Đã khám
+                        else 
+                            a.btn.btn-primary(href='#') Chưa khám

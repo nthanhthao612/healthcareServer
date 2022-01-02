@@ -20,7 +20,18 @@ module.exports.getfinal = async function (req, res) {
 }
 
 module.exports.update = async function (req, res){
-    console.log(req.body);
+    let {_id,listRecorded} = req.body;
+    req.body.userId = undefined;
+    let error = [];
+    let data = await HealthCare.updateOne({_id:_id},
+        {listRecorded:listRecorded}
+    );
+    if(data){
+        res.json({nofitication:"thanh cong"});
+    }else{
+        error.push("loi");
+        res.json({error:error});
+    }
 }
 
 

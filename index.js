@@ -5,8 +5,9 @@ const http = require("http");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+var path = require('path');
 
-
+const calendarApi = require("./api/routes/calendar.router");
 const userApi = require("./api/routes/user.router");
 const messageApi = require("./api/routes/message.router");
 const healthCareApi = require("./api/routes/healthcare.router");
@@ -18,9 +19,13 @@ const userRoute = require("./route/user.route");
 const mainRoute = require("./route/main.route");
 const authMiddleWares = require("./middlewares/user.authentication");
 
-app.use(express.static(__dirname + "/public"));
+// app.use(express.static(__dirname + "/public"));
+
+app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+
+// app.engine('ejs', require('express-ejs-extend'));
 app.set("view engine","pug");
 app.set("views","./views");
 app.use(cookieParser("thanhthao"));
@@ -29,6 +34,7 @@ server.listen(7000,()=>{
     console.log("start server successful !!!");
 });
 
+app.use("/api/calendar",calendarApi);
 app.use("/api/user",userApi);
 app.use("/api/message",messageApi);
 app.use("/api/healthcare",healthCareApi);

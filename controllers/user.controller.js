@@ -18,3 +18,14 @@ module.exports.postLogin = async function(req,res){
         res.redirect("/main");
     }
 }
+
+module.exports.getLogout = async function(req,res){
+    res.render("logout");
+}
+
+module.exports.getInfo = async function(req,res){
+    let {userid} = req.signedCookies;
+    var user = await User.findOne({_id:userid});
+    res.render("main/infoscreen",{User:user});
+    // console.log(user);
+}

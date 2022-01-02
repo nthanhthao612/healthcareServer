@@ -1,0 +1,46 @@
+{
+    "_id": {
+        "$oid": "61ce652ee9a8a8c55c76102c"
+    },
+    "listDate": [
+        {
+            "_id": {
+                "$oid": "6189c869166b35fa8feb4c77"
+            },
+            "userName": "Nguyễn Thanh Thao",
+            "phone": "0389440893",
+            "email": "nthanhthao612",
+            "date": "11/2/2022",
+            "userId": "61cb75f82be15f31bb7fb822",
+            "docID": "61c835e5792d3bb6d16ae2a1",
+            "docName": "4",
+            "time": "11h30"
+        }
+    ]
+}
+
+
+
+{
+    "_id": {
+        "$oid": "61d1cbdd4a7d065c7d39290d"
+    },
+    "listDate": [
+        {
+            "_id": {
+                "$oid": "6189c869166b35fa8feb4c77"
+            },
+            "userName": "Nguyễn Thanh Thao",
+            "phone": "0389440893",
+            "email": "nthanhthao612",
+            "date": "11/2/2022",
+            "userId": "61d1cb4d4a7d065c7d3928f1",
+            "docID": "61d1cbdd4a7d065c7d392912",
+            "docName": "4",
+            "time": "11h30"
+        }
+    ],
+    "__v": {
+        "$numberInt": "0"
+    }
+}

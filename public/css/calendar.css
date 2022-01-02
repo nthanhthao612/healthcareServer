@@ -1,0 +1,22 @@
+.card{
+    border-width: 1px;
+    border-color: red;
+    margin: 20px;
+    max-width: 20%;
+}
+#function-area{ 
+    display: flex;
+    flex-direction: row ;
+    height: 50px;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    background: #fff;
+    margin-bottom: 10px;
+}
+#content-display{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    background: #fff;
+}

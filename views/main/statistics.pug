@@ -1,0 +1,75 @@
+extends ../../public/layout/mainlayout.pug
+block content
+    #main-content
+        - let {listRecorded} = Data;
+        if listRecorded
+            each item in listRecorded 
+                .item1 
+                    .date
+                        p= item.Date
+                    .item-content
+                        .format-item
+                            .name-area
+                                p= item.heartBeat.name
+                            .numeral-area
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/FUWeS5o.png", alt="")
+                                    p= `${item.heartBeat.numeral} ${item.heartBeat.unit}`
+                                .main-numeral 
+                                    p= item.heartBeat.time
+                        .format-item
+                            .name-area
+                                p= item.bloodPressure.name
+                            .numeral-area
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/cuOQjBn.png", alt="")
+                                    p= `${item.bloodPressure.numeral} ${item.bloodPressure.unit}`
+                                .main-numeral 
+                                    p= `Tâm trương`
+                                    p= item.bloodPressure.systolic
+                                .main-numeral 
+                                    p= `Tâm thu`
+                                    p= item.bloodPressure.diastolic
+                                .main-numeral 
+                                    p= item.bloodPressure.time
+                        .format-item
+                            .name-area
+                                p= item.BMI.name
+                            .numeral-area
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/99Pcr3p.png", alt="")
+                                    p= `${item.BMI.numeral} ${item.BMI.unit}`
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/CoIm41a.png", alt="")
+                                    p= item.BMI.height
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/6P6qmqx.png", alt="")
+                                    p= item.BMI.weight
+                                .main-numeral 
+                                    p= item.BMI.time
+                        .format-item
+                            .name-area
+                                p= item.sleepingTimes.name
+                            .numeral-area
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/zWYXczB.png", alt="")
+                                    p= `${item.sleepingTimes.numeral} ${item.sleepingTimes.unit}`
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/WhIDUBq.png", alt="")
+                                    p= item.sleepingTimes.start
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/8Uzdx6R.png", alt="")
+                                    p= item.sleepingTimes.end
+                        
+                        .format-item
+                            .name-area
+                                p= item.footSteps.name
+                            .numeral-area
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/UR9BFhy.png", alt="")
+                                    p= `${item.footSteps.numeral} ${item.footSteps.unit}`
+                                .main-numeral 
+                                    img.icon-styles(src="https://i.imgur.com/lZLbYAD.png", alt="")
+                                    p= item.footSteps.distance
+                                .main-numeral 
+                                    p= item.footSteps.time

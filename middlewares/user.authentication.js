@@ -26,3 +26,16 @@ module.exports.authenticateWebLogin = async function(req,res,next){
     // console.log(req.signedCookies);
     next();
 }
+module.exports.authenticateWebLogin = async function(req,res,next){
+        if(!req.signedCookies.userid){
+        res.redirect('/user/login');
+        return;
+    }
+    var user = await User.find({_id:req.signedCookies.userid});
+    if(user.length == 0){
+        res.redirect('/user/login');
+        return;
+    }
+    // console.log(req.signedCookies);
+    next();
+}
