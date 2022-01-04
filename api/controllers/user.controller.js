@@ -74,7 +74,6 @@ module.exports.Register = async function (req, res) {
         defaultRecord.BMI.time = currentTime;
         defaultRecord.heartBeat.time = currentTime;
         defaultRecord._id = new ObjectID();
-        data.permit = "nor";
         await HealthCare.updateOne({ _id: healthcare._id }, { listRecorded: [defaultRecord] });
         let temp = await User.create(data);
         res.json({ notification: "successful!" });

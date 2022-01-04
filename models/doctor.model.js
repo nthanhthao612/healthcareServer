@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
+var doctorSchema = new mongoose.Schema({
+    index: Number,
     username: String,
     password: String,
     avatar: String,
@@ -10,11 +11,11 @@ var userSchema = new mongoose.Schema({
     dob: String,
     gender: String,
     email: String,
-    healthCare: Object,
-    messagese: Object,
     calendar: Object,
+    specialization: String,
+    permit: String,
     address: String
 });
-var User = mongoose.model('User', userSchema, 'users');
+var Doctor = mongoose.model('Doctor', doctorSchema, 'doctors');
 
-module.exports = User;
+module.exports = Doctor;

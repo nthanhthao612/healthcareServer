@@ -1,0 +1,37 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel="stylesheet", href="/css/main.css" type="text/css")
+    link(rel="stylesheet", href="/css/workspace.css" type="text/css")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+    link(rel='stylesheet', href='/css/info.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')
+    link(rel='shortcut icon',href='https://i.imgur.com/vBnI0nF.png')
+    link(rel='stylesheet', href='/css/statistics.css')
+    title Main
+    script(src="js/jquery-3.6.0.min.js")
+// header start
+body
+    #header
+        .logo-area 
+            div
+                a.logo(href="/")
+                    img.logoPic(src="https://i.imgur.com/UiEpG5Y.png") 
+        .logout-btn-area
+           a#logoutbtn.btn.btn-primary(href="/user/logout")  Đăng xuất
+    #main-area
+        #main-content
+            #search-area
+                a.btn.btn-primary.btn-lg.active(href='/user/admin/create', role='button', aria-pressed='true')
+                    i.fas.fa-plus-circle &nbsp;&nbsp; Thêm bác sĩ
+                form#search-form(action="/main/workspace/get",method="get") 
+                    input#inputSearch(type='text', placeholder='Tìm kiếm',name="searchValue",,required="true")
+                    select.form-select(aria-label='Default select example',name="method",id="select",required="true")
+                        option(value='') Chọn phương thức
+                        option(value='id') ID
+                        option(value='phone') Điện thoại
+                    button#search-btn.btn.btn-primary(type='Submit') Tìm kiếm
+            block content

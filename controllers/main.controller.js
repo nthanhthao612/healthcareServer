@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const Doctor = require("../models/doctor.model");
 const HealthCare = require("../models/healthcare.model");
 const Calendar = require("../models/calendar.model");
 
@@ -11,7 +12,6 @@ module.exports.getMain = function (req, res) {
 }
 
 module.exports.getHealthCareInfo = async function (req, res) {
-    // let id = req.body.userId;
     let {searchValue,method} = req.query;
     let error = [];
     let user = {};
@@ -37,11 +37,10 @@ module.exports.getHealthCareInfo = async function (req, res) {
 
 module.exports.getCalendar = async function (req, res) {
     let {userid} =  req.signedCookies;
-    let user = await User.findOne({_id: userid});
+    let user = await Doctor.findOne({_id: userid});
     let calendarId = JSON.parse(JSON.stringify(user.calendar)).$id;
     let data = await Calendar.findOne({ _id: calendarId });
     res.render("main/calendar",{Data:data});
-    // console.log(data);
 }
 module.exports.getChat = async function (req, res) {
     res.render("main/chatscreen");

@@ -1,0 +1,27 @@
+extends ../../public/layout/adminlayout.pug
+block content
+    #content-display
+        if listDoc
+            table.table
+                thead
+                        tr
+                        th(scope='col') ID
+                        th(scope='col') Họ
+                        th(scope='col') Tên
+                        th(scope='col') Giới tính
+                        th(scope='col') Chuyên khoa
+                        th(scope='col') Chức năng
+                each item in listDoc
+                    tbody
+                        tr
+                        th(scope='row')= item.index
+                        td= item.lastName
+                        td= item.firstName
+                        td= item.gender
+                        td= item.specialization
+                        <td>
+                            a.btn.btn-primary.btn-lg.active(href=`/user/admin/delete?id=${item._id}`, role='button') Xóa tài khoản
+                        </td>
+                        
+                    
+                          
