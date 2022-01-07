@@ -1,8 +1,7 @@
 const Doctor = require("../models/doctor.model");
-let defaultDoctor = require("../defaultDoctor.json");
+let defaultDoctor = require("../json/defaultDoctor.json");
 let Calendar = require("../models/calendar.model");
-let defaultRecord = require("../healthcareDEF.json");
-const { redirect } = require("express/lib/response");
+
 
 
 module.exports.getLogin = async function (req, res) {

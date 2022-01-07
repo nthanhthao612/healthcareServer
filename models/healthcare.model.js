@@ -17,7 +17,6 @@ var listRecordedSchema = new mongoose.Schema({
         activityId: String,
         numeral: Number,
         rate: String,
-        time: String,
         start:String,
         end:String,
         unit: String

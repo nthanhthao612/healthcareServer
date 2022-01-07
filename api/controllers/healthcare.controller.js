@@ -35,36 +35,18 @@ module.exports.update = async function (req, res){
 }
 
 
+var mqtt = require('mqtt');
+// tạo option sử dụng thuộc tính connect để kết nối đến broket MQTT 
 
 
-
-// module.exports.updateBmi = async function (req, res) {
-//     let {healthcareID,height,weight} = req.body;
-//     let numeral = weight/((height/100)*(height/100));
-//     if(height ==0 || weight == 0){
-//         res.json({error:"Không hợp lệ"});
-//         return;
-//     }
-//     numeral = numeral.toFixed(1);
-//     let data = await HealthCare.findOne({_id:healthcareID});
-//     let {listRecorded} = data;
-//     let temp = listRecorded.pop();
-//     let {BMI} = temp;
-//     BMI.height = height;
-//     BMI.weight = weight;
-//     BMI.numeral = numeral;
-//     BMI.time = getDateTime().time;
-//     let result = await HealthCare.updateOne({_id:healthcareID},{
-//         listRecorded:[...listRecorded,temp]
-//     });
-
-// }
-
-// function getDateTime() {
-//     let temp = {};
-//     let date = new Date();
-//     temp.time = `${date.getHours()}h${date.getMinutes()}`;
-//     temp.date = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-//     return temp;
-// }
-
+module.exports.updateHeartBeat = function (req, res){
+    console.log("vao");
+    var client = mqtt.connect('mqtt://localhost');
+        console.log('Server Connect')
+        client.subscribe('/client/heartbeat')
+        client.publish('/server/heartbeat', 'Can lay du lieu')
+    client.on('message', function(topic, message) {
+        console.log(message.toString())
+        client.end()
+    })
+}

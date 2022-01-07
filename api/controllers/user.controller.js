@@ -4,7 +4,7 @@ const HealthCare = require("../../models/healthcare.model");
 var jwt = require('jsonwebtoken');
 const FemaleAvatar = "https://i.imgur.com/PNV9Tr8.png";
 const MaleAvatar = "https://i.imgur.com/f94KMy4.png";
-let defaultRecord = require("../../healthcareDEF.json");
+let defaultRecord = require("../../json/healthcareDEF.json");
 let ObjectID = require('mongodb').ObjectID;
 let Calendar = require("../../models/calendar.model");
 
