@@ -15,8 +15,9 @@ module.exports.updateHeartBeat = async function (req, res) {
     options = {
         port: 1883,
         clientId: `HeartBeat_${userId}`,
+        host:'mqtt://128.199.91.133'
     };
-    let client = mqtt.connect('mqtt://localhost', options);
+    let client = mqtt.connect('mqtt://128.199.91.133', options);
     client.on('connect', function () {
         client.subscribe(`response/heartbeat/${userId}`);
         client.publish(`request/heartbeat/${userId}`, "get value")
@@ -51,8 +52,9 @@ module.exports.updateBloodPressure = async function (req, res) {
     options = {
         port: 1883,
         clientId: `BloodPressure_${userId}`,
+        host:'mqtt://128.199.91.133'
     };
-    let client = mqtt.connect('mqtt://localhost', options);
+    let client = mqtt.connect('mqtt://128.199.91.133', options);
     client.on('connect', function () {
         client.subscribe(`response/bloodpressure/${userId}`);
         client.publish(`request/bloodpressure/${userId}`, "get value")
@@ -90,8 +92,9 @@ module.exports.updateBMI = async function (req, res) {
     options = {
         port: 1883,
         clientId: `BMI_${userId}`,
+        host:'mqtt://128.199.91.133'
     };
-    let client = mqtt.connect('mqtt://localhost', options);
+    let client = mqtt.connect('mqtt://128.199.91.133', options);
     client.on('connect', function () {
         client.subscribe(`response/bmi/${userId}`);
         client.publish(`request/bmi/${userId}`, "get value")
@@ -121,7 +124,6 @@ module.exports.updateFootSteps = async function (req, res) {
     let {time,date} = getCurrentDay();
     let {data} = req.body;
     let {userId} = req.body;
-    console.log(req.body);
     let healthcare = await HealthCare.findOne({_id:data});
     let listRecorded = healthcare.listRecorded;
     let last = listRecorded.pop();
@@ -130,8 +132,9 @@ module.exports.updateFootSteps = async function (req, res) {
     options = {
         port: 1883,
         clientId: `_${userId}`,
+        host:'mqtt://128.199.91.133'
     };
-    let client = mqtt.connect('mqtt://localhost', options);
+    let client = mqtt.connect('mqtt://128.199.91.133', options);
     client.on('connect', function () {
         client.subscribe(`response/footsteps/${userId}`);
         client.publish(`request/footsteps/${userId}`, "get value")
