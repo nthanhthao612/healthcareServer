@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var listRecordedSchema = new mongoose.Schema({
-    footSteps: {
+    bodyTemperature: {
         name: String,
         keyword: String,
         activityId: String,
@@ -9,7 +9,6 @@ var listRecordedSchema = new mongoose.Schema({
         rate: String,
         time: String,
         unit: String,
-        distance: Number,
     },
     sleepingTimes: {
         name: String,

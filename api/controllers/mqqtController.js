@@ -28,7 +28,7 @@ module.exports.updateHeartBeat = async function (req, res) {
                 temp.heartBeat.numeral = parseInt(message.toString());
                 temp.heartBeat.time = time;
                 temp.Date = date;
-                listRecorded.push(last,temp);
+                listRecorded.push(temp);
                 let a = await HealthCare.updateOne({_id:data},{
                     listRecorded:listRecorded
                 });
@@ -68,7 +68,7 @@ module.exports.updateBloodPressure = async function (req, res) {
                 temp.bloodPressure.numeral = `${temp.bloodPressure.systolic}/${temp.bloodPressure.diastolic}`;
                 temp.bloodPressure.time = time;
                 temp.Date = date;
-                listRecorded.push(last,temp);
+                listRecorded.push(temp);
                 let a = await HealthCare.updateOne({_id:data},{
                     listRecorded:listRecorded
                 });
@@ -108,7 +108,7 @@ module.exports.updateBMI = async function (req, res) {
                 temp.BMI.numeral = parseFloat((temp.BMI.weight/(temp.BMI.height*temp.BMI.height/10000)).toFixed(2));
                 temp.BMI.time = time;
                 temp.Date = date;
-                listRecorded.push(last,temp);
+                listRecorded.push(temp);
                 let a = await HealthCare.updateOne({_id:data},{
                     listRecorded:listRecorded
                 });
@@ -120,7 +120,7 @@ module.exports.updateBMI = async function (req, res) {
 }
 
 
-module.exports.updateFootSteps = async function (req, res) {
+module.exports.updateBodyTemperature = async function (req, res) {
     let {time,date} = getCurrentDay();
     let {data} = req.body;
     let {userId} = req.body;
@@ -136,22 +136,20 @@ module.exports.updateFootSteps = async function (req, res) {
     };
     let client = mqtt.connect('mqtt://128.199.91.133', options);
     client.on('connect', function () {
-        client.subscribe(`response/footsteps/${userId}`);
-        client.publish(`request/footsteps/${userId}`, "get value")
+        client.subscribe(`response/bodytemperature/${userId}`);
+        client.publish(`request/bodytemperature/${userId}`, "get value")
     });
     client.on('message', async function (topic, message) {
         if (message.toString() !== "" && message) {
             client.end(async function(){
-                let value = message.toString().split(',');
-                temp.footSteps.numeral = parseInt(value[0]);
-                temp.footSteps.distance = parseInt(value[1]);
-                temp.footSteps.time = time;
+                temp.bodyTemperature.numeral = parseFloat(message.toString());
+                temp.bodyTemperature.time = time;
                 temp.Date = date;
-                listRecorded.push(last,temp);
+                listRecorded.push(temp);
                 let a = await HealthCare.updateOne({_id:data},{
                     listRecorded:listRecorded
                 });
-                console.log("co vao footSteps");
+                console.log("co vao bodyTemperature");
                 res.json({nof:"successful!!"});
             });
         }

@@ -1,13 +1,12 @@
 {
-    "footSteps": {
+    "bodyTemperature": {
         "activityId": "1",
-        "keyword": "footsteps",
-        "name": "Bước chân",
+        "keyword": "bodyTemperature",
+        "name": "Nhiệt độ",
         "numeral": 0,
         "rate": "Bình thường",
         "time": "0",
-        "unit": "Bước",
-        "distance":0
+        "unit": "*C"
     },
     "sleepingTimes": {
         "activityId": "2",

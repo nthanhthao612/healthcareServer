@@ -12,6 +12,6 @@ client.on('connect', function() {
     client.subscribe('request/heartbeat/61d6dcd3f99e10c9b4453085');
 });
 client.on('message', function(topic,message){
-  client.publish('response/heartbeat/61d6dcd3f99e10c9b4453085',"20",function(){
+  client.publish('response/heartbeat/61d6dcd3f99e10c9b4453085',"80",function(){
   });
 });

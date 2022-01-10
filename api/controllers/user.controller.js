@@ -61,6 +61,7 @@ module.exports.Register = async function (req, res) {
         let message = await Message.create({ chatBoxList: [] });
         let healthcare = await HealthCare.create({ listRecorded: [] });
         let calendar = await Calendar.create({ listDate: [] });
+        console.log("co dang ky ne");
         data.gender == "Nam" ? data.avatar = MaleAvatar : data.avatar = FemaleAvatar;
         data.healthCare = { $ref: "healthcareStatistics", $id: healthcare._id, $db: "heathcareMGServer" };
         data.messagese = { $ref: "message", $id: message._id, $db: "heathcareMGServer" }
@@ -69,7 +70,7 @@ module.exports.Register = async function (req, res) {
         let currentTime = `${date.getHours()}h${date.getMinutes()}`;
         let currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
         defaultRecord.Date = currentDate;
-        defaultRecord.footSteps.time = currentTime;
+        defaultRecord.bodyTemperature.time = currentTime;
         defaultRecord.bloodPressure.time = currentTime;
         defaultRecord.BMI.time = currentTime;
         defaultRecord.heartBeat.time = currentTime;

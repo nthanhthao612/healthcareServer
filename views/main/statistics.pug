@@ -63,13 +63,10 @@ block content
                         
                         .format-item
                             .name-area
-                                p= item.footSteps.name
+                                p= item.bodyTemperature.name
                             .numeral-area
                                 .main-numeral 
-                                    img.icon-styles(src="https://i.imgur.com/UR9BFhy.png", alt="")
-                                    p= `${item.footSteps.numeral} ${item.footSteps.unit}`
+                                    img.icon-styles(src="https://i.imgur.com/4hnRPCI.png", alt="")
+                                    p= `${item.bodyTemperature.numeral} ${item.bodyTemperature.unit}`
                                 .main-numeral 
-                                    img.icon-styles(src="https://i.imgur.com/lZLbYAD.png", alt="")
-                                    p= item.footSteps.distance
-                                .main-numeral 
-                                    p= item.footSteps.time
+                                    p= item.bodyTemperature.time

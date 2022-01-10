@@ -13,7 +13,7 @@ Router.post("/updatebloodpressure",authMidlewares.userAuthentication ,mqqtContro
 
 Router.post("/updatebmi",authMidlewares.userAuthentication ,mqqtController.updateBMI);
 
-Router.post("/updatefootsteps",authMidlewares.userAuthentication ,mqqtController.updateFootSteps);
+Router.post("/updatebodytemperature",authMidlewares.userAuthentication ,mqqtController.updateBodyTemperature);
 
 Router.post("/update",authMidlewares.userAuthentication, healthCareControllers.update);
 
