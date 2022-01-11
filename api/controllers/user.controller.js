@@ -45,8 +45,10 @@ module.exports.Login = async function (req, res) {
 }
 
 module.exports.Register = async function (req, res) {
+    let date = new Date();
     const { data } = req.body;
     var error = [];
+    data.age = date.getFullYear() - parseInt(data.dob.split("/")[2]);
     var user = await User.findOne({ username: data.username });
     if (data.username == "" || data.password == "") {
         error.push("Tên tài khoản và mật khẩu không được bỏ trống");
@@ -61,12 +63,10 @@ module.exports.Register = async function (req, res) {
         let message = await Message.create({ chatBoxList: [] });
         let healthcare = await HealthCare.create({ listRecorded: [] });
         let calendar = await Calendar.create({ listDate: [] });
-        console.log("co dang ky ne");
         data.gender == "Nam" ? data.avatar = MaleAvatar : data.avatar = FemaleAvatar;
         data.healthCare = { $ref: "healthcareStatistics", $id: healthcare._id, $db: "heathcareMGServer" };
         data.messagese = { $ref: "message", $id: message._id, $db: "heathcareMGServer" }
         data.calendar = { $ref: "calendar", $id: calendar._id, $db: "heathcareMGServer" }
-        let date = new Date();
         let currentTime = `${date.getHours()}h${date.getMinutes()}`;
         let currentDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
         defaultRecord.Date = currentDate;
@@ -78,6 +78,7 @@ module.exports.Register = async function (req, res) {
         await HealthCare.updateOne({ _id: healthcare._id }, { listRecorded: [defaultRecord] });
         let temp = await User.create(data);
         res.json({ notification: "successful!" });
+        console.log("dang ky thanh cong");
     }
 }
 
